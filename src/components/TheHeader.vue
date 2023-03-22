@@ -1,5 +1,6 @@
 <template>
   <div class="google-header header-height">
+    <div></div>
     <div class="actions">
       <div class="links">
         <div class="link__item">
@@ -50,6 +51,7 @@ export default {};
 }
 .actions {
   display: flex;
+  flex-wrap: nowrap;
   height: 48px;
   align-items: center;
   padding-left: 48px;
@@ -57,6 +59,7 @@ export default {};
   float: right;
 }
 .links {
+  display: flex;
   font-family: arial, sans-serif;
   line-height: normal;
   padding-right: 15px;
