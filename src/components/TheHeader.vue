@@ -17,7 +17,17 @@
             ><i class="material-symbols-outlined">Apps</i></a
           >
         </div>
-        <div class="icon__item"><a href="#">Иконка2</a></div>
+        <div class="icon__item img__item">
+          <a href="#" class="material-symbols-outlined"
+            ><img
+              class="icon__item__img"
+              src="https://lh3.google.com/u/0/ogw/AAEL6sim8jiWhL9yZjht3Uofxl4tXtxuHR8rSeh68wCK=s32-c-mo"
+              srcset="
+                https://lh3.google.com/u/0/ogw/AAEL6sim8jiWhL9yZjht3Uofxl4tXtxuHR8rSeh68wCK=s32-c-mo 1x,
+                https://lh3.google.com/u/0/ogw/AAEL6sim8jiWhL9yZjht3Uofxl4tXtxuHR8rSeh68wCK=s64-c-mo 2x
+              "
+          /></a>
+        </div>
       </div>
     </div>
   </div>
@@ -32,6 +42,7 @@ export default {};
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  vertical-align: middle;
 }
 .header-height {
   height: 60px;
@@ -66,6 +77,12 @@ export default {};
   text-decoration: none;
   color: white;
 }
+.img__item {
+  padding: 8px;
+}
+.img__item a {
+  padding: 4px;
+}
 i {
   display: inline-block;
 }
@@ -82,7 +99,11 @@ i {
   display: inline-block;
 }
 .icon__item a:hover {
-  background-color: rgba(136, 140, 143, 0.363);
+  background-color: rgba(232, 234, 237, 0.08);
+  border-radius: 50%;
+}
+
+.icon__item__img {
   border-radius: 50%;
 }
 
