@@ -14,12 +14,16 @@
         <div class="icon__item">
           <a
             class="material-symbols-outlined"
-            href="https://www.google.nl/imghp?hl=ru&amp;ogbl"
+            href="https://about.google/products/"
+            title="Приложения Google"
             ><i class="material-symbols-outlined">Apps</i></a
           >
         </div>
         <div class="icon__item img__item">
-          <a href="#" class="material-symbols-outlined"
+          <a
+            href="https://accounts.google.com/"
+            class="material-symbols-outlined"
+            title="Аккаунт Google"
             ><img
               class="icon__item__img"
               src="https://lh3.google.com/u/0/ogw/AAEL6sim8jiWhL9yZjht3Uofxl4tXtxuHR8rSeh68wCK=s32-c-mo"
@@ -62,7 +66,7 @@ export default {};
   display: flex;
   font-family: arial, sans-serif;
   line-height: normal;
-  padding-right: 15px;
+  padding-right: 11px;
 }
 .link__item {
   display: inline-block;
