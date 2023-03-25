@@ -5,7 +5,8 @@
         Сервисы Google доступны на этих языках:
         <a
           href="https://www.google.com/setprefs?sig=0_UNqi2arej5sf__cG7xIE1UDE9xs%3D&amp;hl=be&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwi7_fKVr_T9AhUXhFwKHXmdDR8Q2ZgBCBM"
-          >Беларуская</a
+        >
+          Беларуская</a
         >
       </div>
     </div>
@@ -32,6 +33,7 @@ export default {};
 .google-lang__block__message a {
   text-decoration: none;
   color: #8ab4f8;
+  padding: 0 3px;
 }
 .google-lang__block__message a:hover,
 .google-lang__block__message a:active {
