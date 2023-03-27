@@ -97,13 +97,50 @@
                               </button>
                             </div>
                           </div>
-                          <div class="accaunt-control__name__info"></div>
+                          <div class="accaunt-control__name__info">
+                            <div class="accaunt-control__name__info__fio">
+                              Кирилл Колубович
+                            </div>
+                            <div class="accaunt-control__name__info__gmail">
+                              kolumb1709@gmail.com
+                            </div>
+                          </div>
                         </div>
-                        <div></div>
+                        <div class="accaunt-control__button">
+                          <a
+                            href="https://myaccount.google.com/?hl=ru&utm_source=OGB&utm_medium=act"
+                            >Управление аккаунтом Google</a
+                          >
+                        </div>
                       </div>
                       <div class="accaunt-control-line"></div>
                     </div>
-                    <div class="manage-item__block"></div>
+                    <div class="manage-item__block add-accaunt">
+                      <a
+                        href="https://accounts.google.com/AddSession?hl=ru&continue=https://www.google.com/&ec=GAlAmgQ&hl=ru&authuser=0"
+                      >
+                        <span class="window-img">
+                          <div class="window-img__add-accaount">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              focusable="false"
+                              class="NMm5M hhikbc"
+                            >
+                              <path
+                                d="M9 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 7c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4zm6 5H3v-.99C3.2 16.29 6.3 15 9 15s5.8 1.29 6 2v1zm3-4v-3h-3V9h3V6h2v3h3v2h-3v3h-2z"
+                              ></path>
+                            </svg>
+                          </div>
+                        </span>
+                        <span class="add-accaunt__message">
+                          <div class="add-accaunt__message__item">
+                            <div>Добавить аккаунт</div>
+                          </div>
+                        </span>
+                      </a>
+                    </div>
                   </div>
                   <div class="account-exit-item"></div>
                   <div class="account-additional-item"></div>
@@ -279,7 +316,7 @@ i {
   display: inline-block;
   padding: 16px 16px 0;
   vertical-align: top;
-  width: calc(100% - 32px);
+  width: 100%;
 }
 .accaunt-control-line {
   box-sizing: content-box;
@@ -300,15 +337,12 @@ i {
   text-align: center;
   height: 64px;
   width: 64px;
-  float: left;
   margin: 0;
 }
 .accaunt-control__name__photo img {
   height: 64px;
   width: 64px;
-  padding: 0;
   border-radius: 50%;
-  fill: none;
 }
 .accaunt-control__name__photo > svg {
   color: rgba(241, 243, 244, 0.12);
@@ -320,27 +354,18 @@ i {
 .camera-icon {
   border-radius: 50%;
   bottom: -4px;
-  height: 30px;
   position: absolute;
   right: -4px;
-  width: 30px;
   background: #1f1f1f;
 }
 .camera-icon button {
-  border-color: #444746;
   margin: 3px;
-  background: rgb(31, 31, 31);
   border: 1px solid #444746;
-  box-sizing: border-box;
   position: relative;
   bottom: 0;
-  box-shadow: none;
   right: 0;
-  z-index: auto;
-  color: #3c4043;
   height: 24px;
   width: 24px;
-  outline: 0;
   padding: 0;
   cursor: pointer;
   border-radius: 50%;
@@ -361,5 +386,87 @@ i {
   overflow: hidden;
   text-overflow: ellipsis;
   vertical-align: top;
+}
+.accaunt-control__name__info__fio {
+  color: rgb(227, 227, 227);
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.accaunt-control__name__info__gmail {
+  color: rgb(196, 199, 197);
+  font-size: 12px;
+}
+.accaunt-control__button {
+  width: 100%;
+  overflow: hidden;
+}
+.accaunt-control__button a {
+  text-decoration: none;
+  display: inline-block;
+  color: rgb(227, 227, 227);
+  padding: 5px 15px;
+  border: 1px solid #747775;
+  margin-bottom: 9px;
+  margin-left: 78px;
+  margin-top: 8px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.accaunt-control__button a:hover {
+  background: rgba(227, 227, 227, 0.08);
+}
+.add-accaunt {
+  border: 0;
+}
+.add-accaunt a {
+  display: block;
+  text-decoration: none;
+  color: #e8eaed;
+  padding: 0 15px 0 31px;
+  border: 1px solid transparent;
+  height: 48px;
+  width: 100%;
+  position: relative;
+}
+.add-accaunt a:hover {
+  background: #2f3339;
+}
+.window-img {
+  display: inline-block;
+  padding: 11px 4px;
+  width: 32px;
+}
+.window-img__add-accaount {
+  height: 24px;
+  width: 24px;
+  padding: 0;
+  vertical-align: middle;
+}
+.window-img__add-accaount svg {
+  fill: currentColor;
+}
+.add-accaunt__message {
+  display: inline-block;
+  margin-left: 30px;
+  max-width: 250px;
+  width: calc(100% - 62px);
+}
+.add-accaunt__message__item {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: normal;
+  max-width: 250px;
+  padding-left: 0;
+  width: 100%;
+}
+.add-accaunt__message__item div {
+  max-height: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
 }
 </style>
