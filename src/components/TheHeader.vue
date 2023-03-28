@@ -37,7 +37,11 @@
           /></a>
         </div>
       </div>
-      <div v-if="accWinVisible" class="accaunt-window">
+      <div
+        v-if="accWinVisible"
+        v-click-outside="closeWindow"
+        class="accaunt-window"
+      >
         <div class="accaunt-window-container">
           <div class="accaunt-window-container__main">
             <div>
@@ -117,16 +121,16 @@
                     </div>
                     <div class="manage-item__block add-accaunt">
                       <a
+                        class="add-accaunt__a"
                         href="https://accounts.google.com/AddSession?hl=ru&continue=https://www.google.com/&ec=GAlAmgQ&hl=ru&authuser=0"
                       >
                         <span class="window-img">
-                          <div class="window-img__add-accaount">
+                          <div class="window-img__block">
                             <svg
                               width="24"
                               height="24"
                               viewBox="0 0 24 24"
                               focusable="false"
-                              class="NMm5M hhikbc"
                             >
                               <path
                                 d="M9 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 7c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4zm6 5H3v-.99C3.2 16.29 6.3 15 9 15s5.8 1.29 6 2v1zm3-4v-3h-3V9h3V6h2v3h3v2h-3v3h-2z"
@@ -134,16 +138,46 @@
                             </svg>
                           </div>
                         </span>
-                        <span class="add-accaunt__message">
-                          <div class="add-accaunt__message__item">
-                            <div>Добавить аккаунт</div>
-                          </div>
+                        <span class="message-block">
+                          <div class="window-message">Добавить аккаунт</div>
                         </span>
                       </a>
                     </div>
                   </div>
-                  <div class="account-exit-item"></div>
-                  <div class="account-additional-item"></div>
+                </div>
+                <div class="account-exit-item">
+                  <a
+                    href="https://accounts.google.com/Logout?hl=ru&continue=https://www.google.com/&timeStmp=1680003440&secTok=.AG5fkS9Tur9nsD3_9GQKtW6Bwm31zPqMSA&ec=GAdAmgQ&hl=ru"
+                    class="add-accaunt__a"
+                  >
+                    <span class="window-img">
+                      <div class="window-img__block">
+                        <svg
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          focusable="false"
+                        >
+                          <path
+                            d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"
+                          ></path>
+                          <path d="M0 0h24v24H0z" fill="none"></path>
+                        </svg>
+                      </div>
+                    </span>
+                    <span class="message-block">
+                      <div class="window-message">Выйти</div>
+                    </span>
+                  </a>
+                </div>
+                <div class="account-additional-item">
+                  <a href="https://policies.google.com/privacy?hl=ru&authuser=0"
+                    >Политика конфиденциальности</a
+                  >
+                  <span>&nbsp;•&nbsp;</span>
+                  <a href="https://policies.google.com/terms?hl=ru&authuser=0"
+                    >Условия использования</a
+                  >
                 </div>
               </div>
             </div>
@@ -164,6 +198,9 @@ export default {
   methods: {
     displayAccount() {
       this.accWinVisible = !this.accWinVisible;
+    },
+    closeWindow() {
+      this.accWinVisible = false;
     },
   },
 };
@@ -389,8 +426,8 @@ i {
 }
 .accaunt-control__name__info__fio {
   color: rgb(227, 227, 227);
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   margin-bottom: 2px;
 }
 .accaunt-control__name__info__gmail {
@@ -419,7 +456,7 @@ i {
 .add-accaunt {
   border: 0;
 }
-.add-accaunt a {
+.add-accaunt__a {
   display: block;
   text-decoration: none;
   color: #e8eaed;
@@ -429,7 +466,7 @@ i {
   width: 100%;
   position: relative;
 }
-.add-accaunt a:hover {
+.add-accaunt__a:hover {
   background: #2f3339;
 }
 .window-img {
@@ -437,36 +474,61 @@ i {
   padding: 11px 4px;
   width: 32px;
 }
-.window-img__add-accaount {
+.window-img__block {
   height: 24px;
   width: 24px;
   padding: 0;
   vertical-align: middle;
 }
-.window-img__add-accaount svg {
+.window-img__block svg {
   fill: currentColor;
 }
-.add-accaunt__message {
+.message-block {
   display: inline-block;
   margin-left: 30px;
   max-width: 250px;
-  width: calc(100% - 62px);
-}
-.add-accaunt__message__item {
-  display: inline-block;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
-  line-height: 20px;
-  letter-spacing: normal;
-  max-width: 250px;
-  padding-left: 0;
-  width: 100%;
+  line-height: 24px;
 }
-.add-accaunt__message__item div {
+.window-message {
   max-height: 40px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   display: -webkit-box;
   overflow: hidden;
+}
+.account-exit-item {
+  border-bottom: 1px solid #7477753d;
+}
+.account-exit-item a {
+  padding: 0 23px 0 39px;
+}
+.account-additional-item {
+  height: 50px;
+  padding: 17px 0;
+  text-align: center;
+}
+.account-additional-item span {
+  color: #e3e3e3;
+}
+.account-additional-item span:hover {
+  background-color: rgba(232, 234, 237, 0.04);
+}
+.account-additional-item a {
+  text-decoration: none;
+  color: #e3e3e3;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  line-height: 14px;
+  vertical-align: text-top;
+  padding: 4px 7px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  text-align: right;
+}
+.account-additional-item a:hover {
+  background: #373b41;
 }
 </style>
